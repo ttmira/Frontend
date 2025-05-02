@@ -1,0 +1,16 @@
+:root {
+    --light-bg: #a4d3a7;
+    --light-card: #81c784;
+    --light-text: #193d1c;
+    --light-accent: #0d3b12;
+    --light-border: #c1dfc3;
+    --light-btn: #0e270f;
+    --light-btn-hover: #4c804e;
+    --light-danger: #3d0606;
+    --light-danger-hover: #493838;
+    --light-edit: #d8b754;
+    --light-edit-hover: #c3b187;
+    --light-input-bg: white;
+    --light-input-text: #333;
+    --light-draggable-column:#ebecf0;
+    --light-draggable-task:#ebecf0;}

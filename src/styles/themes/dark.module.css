@@ -1,0 +1,18 @@
+:root{  --dark-bg: #0f1a13;
+    --dark-card: #1a2e22;
+    --dark-text: #e0f5e4;
+    --dark-accent: #81c784; 
+    --dark-border: #2d4a3a;
+    --dark-btn: #316b4b;
+    --dark-btn-hover: #3a5a48;
+    --dark-danger: #340a0a;
+    --dark-danger-hover: #7a3d3d;
+    --dark-edit: #b89b4a;
+    --dark-edit-hover: #d8b754;
+    --dark-input-bg: #2d4a3a;
+    --dark-input-text: #e0f5e4;
+    --dark-draggable-column:#263c2f;
+    --light-draggable-task: #143222;
+  
+    
+  }

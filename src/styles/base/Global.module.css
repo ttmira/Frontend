@@ -1,0 +1,20 @@
+/* Общие переменные */
+:root {
+    --font-main: Georgia, serif;
+    --transition: all 0.3s ease;
+  }
+  
+  /* Базовые стили */
+  body {
+    font-family: var(--font-main);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  @media (max-width: 768px) {
+    body {
+      padding: 10px;
+    }
+  }

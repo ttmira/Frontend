@@ -1,0 +1,195 @@
+{
+  "users": [
+    {
+      "id": "1746129153101",
+      "email": "test@mail.com",
+      "password": "7777777",
+      "name": "test",
+      "createdAt": "2025-05-01T19:52:33.101Z",
+      "boards": [
+        "8d94",
+        "0281"
+      ]
+    },
+    {
+      "id": "1746129312741",
+      "email": "tamara.kazybaeva2005@gmail.com",
+      "password": "7777777",
+      "name": "Tamara",
+      "createdAt": "2025-05-01T19:55:12.741Z",
+      "boards": [
+        "ceff",
+        "8cc4"
+      ]
+    },
+    {
+      "id": "1746131705468",
+      "email": "aruzhan@mail.com",
+      "password": "7777777",
+      "name": "aruzhan",
+      "createdAt": "2025-05-01T20:35:05.468Z",
+      "boards": []
+    },
+    {
+      "id": "1746132043876",
+      "email": "asel@mail.com",
+      "password": "7777777",
+      "name": "asel",
+      "createdAt": "2025-05-01T20:40:43.876Z",
+      "boards": [
+        "7897",
+        "1bd9",
+        "a64c",
+        "e7a3"
+      ]
+    }
+  ],
+  "boards": [
+    {
+      "id": "5bc9",
+      "title": "today",
+      "columns": [
+        {
+          "id": "5bc9-col-1746145935442",
+          "title": "gg",
+          "tasks": [
+            {
+              "id": "5bc9-col-1746145935442-task-1746146329520",
+              "text": "аа"
+            },
+            {
+              "id": "5bc9-col-1746145935442-task-1746146333182",
+              "text": "рр"
+            }
+          ]
+        },
+        {
+          "id": "5bc9-col-1746145939742",
+          "title": "hh",
+          "tasks": []
+        }
+      ],
+      "ownerId": "1746131705468"
+    },
+    {
+      "id": "7897",
+      "title": "volleyball",
+      "columns": [
+        {
+          "id": "7897-col-1746132184673",
+          "title": "Today",
+          "tasks": [
+            {
+              "id": "7897-col-1746132184673-task-1746132225166",
+              "text": "go to the trenka"
+            }
+          ]
+        },
+        {
+          "id": "7897-col-1746132197867",
+          "title": "This week",
+          "tasks": [
+            {
+              "id": "7897-col-1746132197867-task-1746145595850",
+              "text": "jj"
+            }
+          ]
+        },
+        {
+          "id": "7897-col-1746132208003",
+          "title": "This month",
+          "tasks": [
+            {
+              "id": "7897-col-1746132197867-task-1746132237264",
+              "text": "hhh"
+            }
+          ]
+        }
+      ],
+      "ownerId": "1746132043876"
+    },
+    {
+      "id": "1bd9",
+      "title": "work",
+      "columns": [],
+      "ownerId": "1746132043876"
+    },
+    {
+      "id": "a64c",
+      "title": "home",
+      "columns": [],
+      "ownerId": "1746132043876"
+    },
+    {
+      "id": "e7a3",
+      "title": "my",
+      "columns": [],
+      "ownerId": "1746132043876"
+    },
+    {
+      "id": "8d94",
+      "title": "Home",
+      "columns": [
+        {
+          "id": "8d94-col-1746143158769",
+          "title": "fff",
+          "tasks": [
+            {
+              "id": "8d94-col-1746143158769-task-1746143162094",
+              "text": "gg"
+            },
+            {
+              "id": "8d94-col-1746143158769-task-1746143165347",
+              "text": "ggt"
+            }
+          ]
+        }
+      ],
+      "ownerId": "1746129153101"
+    },
+    {
+      "id": "0281",
+      "title": "My",
+      "columns": [],
+      "ownerId": "1746129153101"
+    },
+    {
+      "id": "ceff",
+      "title": "Vole",
+      "columns": [
+        {
+          "id": "ceff-col-1746135773670",
+          "title": "tt",
+          "tasks": []
+        }
+      ],
+      "ownerId": "1746129312741"
+    },
+    {
+      "id": "8cc4",
+      "title": "rrr",
+      "columns": [
+        {
+          "id": "8cc4-col-1746135989395",
+          "title": "ttt",
+          "tasks": [
+            {
+              "id": "8cc4-col-1746135989395-task-1746135992617",
+              "text": "hhh"
+            },
+            {
+              "id": "8cc4-col-1746135989395-task-1746135995481",
+              "text": "jjj"
+            }
+          ]
+        },
+        {
+          "id": "8cc4-col-1746142639237",
+          "title": "fff",
+          "tasks": []
+        }
+      ],
+      "ownerId": "1746129312741"
+    }
+  ]
+}

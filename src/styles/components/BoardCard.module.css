@@ -1,0 +1,27 @@
+.card {
+    color-scheme: card from '../../themes/light.module.css';
+    padding: 15px;
+    border-radius: 8px;
+    width: 220px;
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: var(--transition);
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+  
+  .title {
+    margin: 0 0 10px 0;
+    color: var(--accent-color);
+    font-size: 1.3em;
+  }
+  
+  @media (max-width: 480px) {
+    .card {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
