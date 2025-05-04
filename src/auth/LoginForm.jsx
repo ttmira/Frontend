@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from './AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 
 export default function LoginForm() {
   const [email, setEmail] = useState('');
@@ -39,7 +39,14 @@ export default function LoginForm() {
           required
         />
         <button type="submit">Login</button>
-
+        <div className="text-center mt-4">
+            <p className="text-sm">
+              Already don't have an account?{' '}
+              <Link to="/register" className="text-primary hover:underline">
+                Register here
+              </Link>
+            </p>
+          </div>
        
 
       </form>

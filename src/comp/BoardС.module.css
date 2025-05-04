@@ -1,0 +1,57 @@
+.container {
+  padding: 15px;
+  border-radius: 8px;
+  width: 220px;
+  background-color: var(--card-bg);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.title {
+  margin: 0 0 10px 0;
+  color: var(--accent-color);
+  font-size: 1.3em;
+}
+
+.viewBtn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: Georgia, serif;
+  background-color: var(--btn-bg);
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.viewBtn:hover {
+  background-color: var(--btn-hover);
+}
+
+.deleteBtn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: Georgia, serif;
+  background-color: var(--danger-bg);
+  color: white;
+}
+
+.deleteBtn:hover {
+  background-color: var(--danger-hover);
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}

@@ -1,0 +1,217 @@
+/* Основные стили доски */
+.tB {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Стили для состояния загрузки */
+.loading {
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+/* Стили для ошибок */
+.errorScreen {
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--danger-bg);
+}
+
+/* Заголовок доски */
+.boardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.boardHeader h1 {
+  margin: 0;
+  color: var(--accent-color);
+  font-size: 1.8rem;
+}
+
+/* Контейнер для колонок */
+.colsContainer {
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.cols {
+  display: flex;
+  gap: 15px;
+  min-height: 400px;
+  padding-bottom: 15px;
+}
+
+/* Стили для существующих колонок */
+.column {
+  min-width: 250px;
+  background: var(--draggable-column);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.column:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.columnHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Стили для формы добавления новой колонки */
+.addColumnForm {
+  min-width: 250px;
+  padding: 15px;
+  background: var(--draggable-column);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.2s ease;
+}
+
+.addColumnForm:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.addColumnForm input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background: var(--input-bg);
+  color: var(--input-text);
+  font-family: inherit;
+}
+
+.addColumnForm input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.formActions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Кнопки */
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btnConfirm {
+  background-color: var(--btn-bg);
+  color: white;
+}
+
+.btnConfirm:hover {
+  background-color: var(--btn-hover);
+}
+
+.btnCancel {
+  background-color: transparent;
+  color: var(--danger-bg);
+  border: 1px solid var(--danger-bg);
+}
+
+.btnCancel:hover {
+  background-color: var(--danger-bg);
+  color: white;
+}
+
+.btnAddColumn {
+  min-width: 250px;
+  height: fit-content;
+  padding: 15px;
+  background: var(--btn-bg);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btnAddColumn:hover {
+  background: var(--btn-hover);
+  transform: translateY(-2px);
+}
+
+/* Стили для drag-and-drop */
+.droppableArea {
+  display: flex;
+  flex-direction: row;
+  min-height: 100%;
+  background-color: rgba(0, 0, 0, 0.05);
+  transition: background-color 0.2s;
+  padding: 10px 0;
+  border-radius: 4px;
+}
+
+.droppableAreaIsOver {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+  .tB {
+    padding: 15px;
+    margin: 10px;
+  }
+  
+  .cols {
+    flex-direction: column;
+    min-height: auto;
+  }
+  
+  .addColumnForm,
+  .btnAddColumn {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .boardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .formActions {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}

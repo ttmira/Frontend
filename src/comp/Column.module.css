@@ -1,0 +1,177 @@
+/* Основные стили колонки */
+.col {
+  min-width: 250px;
+  background: var(--draggable-column);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.col:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Заголовок колонки */
+.colHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.colHead h3 {
+  margin: 0;
+  color: var(--accent-color);
+  font-size: 1.1rem;
+}
+
+/* Стили для задач */
+.draggableTask {
+  margin-bottom: 8px;
+  background: var(--draggable-task);
+  border-radius: 4px;
+  box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
+  cursor: move;
+  transition: all 0.2s ease;
+}
+
+.draggableTask:hover {
+  background: var(--input-bg);
+  transform: translateY(-1px);
+}
+
+.draggableTask.isDragging {
+  opacity: 0.5;
+  background: var(--border-color);
+}
+
+/* Форма добавления задачи */
+.addForm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--input-bg);
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+.addForm input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background: var(--input-bg);
+  color: var(--input-text);
+  font-family: inherit;
+}
+
+.addForm input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.formActions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Кнопки */
+.btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-family: Georgia, serif;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn.del {
+  background-color: var(--danger-bg);
+  color: white;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+}
+
+.btn.del:hover {
+  background-color: var(--danger-hover);
+}
+
+.btn.add {
+  width: 100%;
+  padding: 8px;
+  background-color: var(--btn-bg);
+  color: white;
+  margin-top: 5px;
+}
+
+.btn.add:hover {
+  background-color: var(--btn-hover);
+}
+
+.btn.cancel {
+  background-color: transparent;
+  color: var(--danger-bg);
+  border: 1px solid var(--danger-bg);
+}
+
+.btn.cancel:hover {
+  background-color: var(--danger-bg);
+  color: white;
+}
+
+/* Сообщения об ошибках */
+.errorMessage {
+  position: relative;
+  padding: 8px 12px;
+  background: var(--danger-bg);
+  color: white;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin: 5px 0;
+}
+
+.btn.dismiss {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+.btn.dismiss:hover {
+  color: var(--danger-hover);
+}
+@media (max-width: 768px) {
+  .col {
+    min-width: 100%;
+  }
+  
+  .addForm {
+    flex-direction: column;
+  }
+  
+  .formActions {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}

@@ -9,6 +9,7 @@ import Column from "./Column";
 import DraggableColumn from "./DraggableColumn";
 import { ItemTypes } from '../utils/dnd';
 import { loadBoard, addNewColumn, removeColumn, moveColumn } from '../redux/actions/boardActions';
+import styles from './TaskB.module.css';
 
 function ColumnDropTarget({ boardId, children }) {
   const dispatch = useDispatch();
@@ -33,14 +34,7 @@ function ColumnDropTarget({ boardId, children }) {
   return (
     <div 
       ref={drop} 
-      style={{
-        display: 'flex',
-        flexDirection: 'row',
-        minHeight: '100%',
-        backgroundColor: isOver ? 'rgba(0,0,0,0.1)' : 'transparent',
-        transition: 'background-color 0.2s',
-        padding: '10px 0'
-      }}
+      className={`${styles.droppableArea} ${isOver ? styles.isOver : ''}`}
     >
       {children}
     </div>
@@ -90,30 +84,30 @@ export default function TaskB() {
   }, [boardId, dispatch]);
 
   if (loading) {
-    return <div className="loading">Loading board...</div>;
+    return <div className={styles.loading}>Loading board...</div>;
   }
 
   if (!board) {
-    return <div className="error-screen">Board not found</div>;
+    return <div className={styles.errorScreen}>Board not found</div>;
   }
 
   return (
     <DndProvider backend={HTML5Backend}>
-      <div className={`tB ${theme}`}>
-        <div className="board-header">
+      <div className={`${styles.tB} ${theme}`}>
+        <div className={styles.boardHeader}>
           <h1>{board.title}</h1>
           {error && (
-            <div className="error-message">
+            <div className={styles.errorMessage}>
               {error}
-              <button onClick={() => setError(null)} className="btn dismiss">
+              <button onClick={() => setError(null)} className={`${styles.btn} ${styles.dismiss}`}>
                 ×
               </button>
             </div>
           )}
         </div>
         
-        <div className="cols-container">
-          <div className="cols">
+        <div className={styles.colsContainer}>
+          <div className={styles.cols}>
             <ColumnDropTarget boardId={boardId}>
               {board.columns?.map((column, index) => (
                 <DraggableColumn
@@ -127,7 +121,7 @@ export default function TaskB() {
             </ColumnDropTarget>
             
             {isAdding ? (
-              <div className="add-column-form">
+              <div className={styles.addColumnForm}>
                 <input
                   type="text"
                   value={newTitle}
@@ -135,13 +129,13 @@ export default function TaskB() {
                   placeholder="Column title"
                   autoFocus
                 />
-                <div className="form-actions">
-                  <button onClick={addCol} className="btn confirm">
+                <div className={styles.formActions}>
+                  <button onClick={addCol} className={`${styles.btn} ${styles.btnConfirm}`}>
                     Add Column
                   </button>
                   <button 
                     onClick={() => setIsAdding(false)} 
-                    className="btn cancel"
+                    className={`${styles.btn} ${styles.btnCancel}`}
                   >
                     Cancel
                   </button>
@@ -150,9 +144,9 @@ export default function TaskB() {
             ) : (
               <button 
                 onClick={() => setIsAdding(true)} 
-                className="btn add-column"
+                className={`${styles.btn} ${styles.btnAddColumn}`}
               >
-                + Add Column
+                <span>+</span> Add Column
               </button>
             )}
           </div>

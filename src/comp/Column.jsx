@@ -3,7 +3,7 @@ import TaskC from "./TaskC";
 import { useDispatch, useSelector } from 'react-redux';
 import { addNewTask, updateExistingTask, removeTask, moveTask } from '../redux/actions/taskActions';
 import { useTaskDrag, useTaskDrop } from '../utils/dnd';
-
+import styles from './Column.module.css';
 
 const DraggableTask = React.memo(({ task, columnId, index, onEdit, onDel, onMoveTask, onDragEnd }) => {
   const ref = useRef(null);
@@ -31,8 +31,7 @@ const DraggableTask = React.memo(({ task, columnId, index, onEdit, onDel, onMove
   return (
     <div 
       ref={ref} 
-      className="draggable-task" 
-      style={{ opacity: isDragging ? 0.5 : 1 }}
+      className={`${styles.draggableTask} ${isDragging ? styles.isDragging : ''}`}
     >
       <TaskC
         task={task}
@@ -49,7 +48,6 @@ export default React.memo(function Column({ boardId, column, onDelCol }) {
   const [error, setError] = useState(null);
   const dispatch = useDispatch();
 
- 
   const tasks = useSelector(state => {
     const boardTasks = state.tasks[boardId] || {};
     const columnTasks = boardTasks[column?.id] || {};
@@ -124,16 +122,20 @@ export default React.memo(function Column({ boardId, column, onDelCol }) {
   }
 
   return (
-    <div className="col">
-      <div className="colHead">
+    <div className={styles.col}>
+      <div className={styles.colHead}>
         <h3>{column.title}</h3>
-        <button onClick={() => onDelCol(column.id)} className="btn del">Del</button>
+        <button onClick={() => onDelCol(column.id)} className={`${styles.btn} ${styles.del}`}>
+          Del
+        </button>
       </div>
 
       {error && (
-        <div className="error-message">
+        <div className={styles.errorMessage}>
           {error}
-          <button onClick={() => setError(null)} className="btn dismiss">×</button>
+          <button onClick={() => setError(null)} className={`${styles.btn} ${styles.dismiss}`}>
+            ×
+          </button>
         </div>
       )}
 
@@ -153,7 +155,7 @@ export default React.memo(function Column({ boardId, column, onDelCol }) {
       ))}
       
       {isAdding ? (
-        <div className="addForm">
+        <div className={styles.addForm}>
           <input
             type="text"
             value={newText}
@@ -161,11 +163,17 @@ export default React.memo(function Column({ boardId, column, onDelCol }) {
             placeholder="Task text"
             autoFocus
           />
-          <button onClick={addT} className="btn">Add</button>
-          <button onClick={() => setIsAdding(false)} className="btn cancel">×</button>
+          <div className={styles.formActions}>
+            <button onClick={addT} className={styles.btn}>Add</button>
+            <button onClick={() => setIsAdding(false)} className={`${styles.btn} ${styles.cancel}`}>
+              ×
+            </button>
+          </div>
         </div>
       ) : (
-        <button onClick={() => setIsAdding(true)} className="btn add">+ Add Task</button>
+        <button onClick={() => setIsAdding(true)} className={`${styles.btn} ${styles.add}`}>
+          + Add Task
+        </button>
       )}
     </div>
   );
