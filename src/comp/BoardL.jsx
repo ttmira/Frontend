@@ -7,6 +7,7 @@ import {
   createUserBoard, 
   removeUserBoard 
 } from '../redux/actions/boardActions';
+import styles from './BoardL.module.css';
 
 export default function BoardL() {
   const [newTitle, setNewTitle] = useState("");
@@ -39,17 +40,17 @@ export default function BoardL() {
   };
 
   if (loading) {
-    return <div className="loading">Loading boards...</div>;
+    return <div className={styles.loading}>Loading boards...</div>;
   }
 
   if (error) {
     return (
-      <div className="server-error">
+      <div className={styles.serverError}>
         <h3>Connection Problem</h3>
         <p>{error}</p>
         <button 
           onClick={() => user && dispatch(loadUserBoards(user.id))} 
-          className="btn retry"
+          className={`${styles.btn} ${styles.retry}`}
         >
           Retry
         </button>
@@ -58,7 +59,7 @@ export default function BoardL() {
   }
 
   return (
-    <div className="bL">
+    <div className={styles.boardList}>
       {userBoards.map((b) => (
         <BoardC 
           key={b.id} 
@@ -69,7 +70,7 @@ export default function BoardL() {
       ))}
       
       {isAdding ? (
-        <div className="addForm">
+        <div className={styles.addForm}>
           <input
             type="text"
             value={newTitle}
@@ -77,11 +78,15 @@ export default function BoardL() {
             placeholder="Board title"
             autoFocus
           />
-          <button onClick={addB} className="btn">Add</button>
-          <button onClick={() => setIsAdding(false)} className="btn cancel">×</button>
+          <div className={styles.formActions}>
+            <button onClick={addB} className={styles.btn}>Add</button>
+            <button onClick={() => setIsAdding(false)} className={`${styles.btn} ${styles.cancel}`}>×</button>
+          </div>
         </div>
       ) : (
-        <button onClick={() => setIsAdding(true)} className="btn add">+ Add Board</button>
+        <button onClick={() => setIsAdding(true)} className={`${styles.btn} ${styles.add}`}>
+          + Add Board
+        </button>
       )}
     </div>
   );

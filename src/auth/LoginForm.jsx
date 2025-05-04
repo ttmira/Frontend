@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from './AuthContext';
-import { useNavigate,Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import styles from './Auth.module.css';
 
 export default function LoginForm() {
   const [email, setEmail] = useState('');
@@ -20,36 +21,47 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="auth-form">
-      <h2>Login</h2>
-      {error && <div className="error">{error}</div>}
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email"
-          required
-        />
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-          required
-        />
-        <button type="submit">Login</button>
-        <div className="text-center mt-4">
-            <p className="text-sm">
-              Already don't have an account?{' '}
-              <Link to="/register" className="text-primary hover:underline">
-                Register here
-              </Link>
-            </p>
+    <div className={styles.authContainer}>
+      <div className={styles.authForm}>
+        <h2>Login</h2>
+        {error && <div className={styles.errorMessage}>{error}</div>}
+        <form onSubmit={handleSubmit}>
+          <div className={styles.inputGroup}>
+            <label htmlFor="email">Email</label>
+            <input
+              id="email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email"
+              required
+            />
           </div>
-       
-
-      </form>
+          
+          <div className={styles.inputGroup}>
+            <label htmlFor="password">Password</label>
+            <input
+              id="password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+              required
+            />
+          </div>
+          
+          <button type="submit" className={styles.authButton}>
+            Login
+          </button>
+          
+          <p className={styles.authText}>
+            Don't have an account?{' '}
+            <Link to="/register" className={styles.authLink}>
+              Register here
+            </Link>
+          </p>
+        </form>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,83 @@
+.boardCard {
+    padding: 15px;
+    border-radius: 8px;
+    width: 220px;
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .boardCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .boardTitle {
+    margin: 0 0 10px 0;
+    color: var(--accent-color);
+    font-size: 1.3em;
+    word-break: break-word;
+  }
+  
+  .viewButton {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Georgia, serif;
+    background-color: var(--btn-bg);
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.6s;
+  }
+  
+  .viewButton:hover {
+    background-color: var(--btn-hover);
+  }
+  
+  .deleteButton {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Georgia, serif;
+    background-color: var(--danger-bg);
+    color: white;
+    transition: all 0.6s;
+  }
+  
+  .deleteButton:hover {
+    background-color: var(--danger-hover);
+  }
+  
+  .actions {
+    display: flex;
+    gap: 8px;
+  }
+  
+
+  @media (max-width: 768px) {
+    .boardCard {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .boardCard {
+      width: 100%;
+    }
+    
+    .actions {
+      flex-direction: column;
+    }
+    
+    .viewButton,
+    .deleteButton {
+      width: 100%;
+    }
+  }

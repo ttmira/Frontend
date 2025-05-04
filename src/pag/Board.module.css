@@ -1,0 +1,95 @@
+
+.boardPage {
+    position: relative;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    transition: background-color 0.3s ease;
+    padding: 20px;
+  }
+
+  .themeToggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--btn-bg);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .themeToggle:hover {
+    transform: scale(1.1);
+    background-color: var(--btn-hover);
+  }
+
+  .homeButton {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 8px 16px;
+    background-color: var(--btn-bg);
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    z-index: 100;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .homeButton:hover {
+    background-color: var(--btn-hover);
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 768px) {
+    .boardPage {
+      padding: 15px;
+    }
+    
+    .themeToggle {
+      top: 15px;
+      right: 15px;
+      width: 36px;
+      height: 36px;
+    }
+    
+    .homeButton {
+      top: 15px;
+      left: 15px;
+      padding: 6px 12px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .boardPage {
+      padding: 10px;
+    }
+    
+    .themeToggle {
+      top: 10px;
+      right: 10px;
+      width: 32px;
+      height: 32px;
+      font-size: 1rem;
+    }
+    
+    .homeButton {
+      top: 10px;
+      left: 10px;
+      font-size: 0.8rem;
+    }
+  }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAuth } from '../auth/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import styles from './Log.module.css';
 
 function LogoutButton() {
   const { logout } = useAuth();
@@ -10,12 +11,15 @@ function LogoutButton() {
     logout();
     navigate('/login'); 
   };
+
   return (
     <button 
       onClick={handleLogout}
-      className="logout-button" 
-    > Logout
+      className={styles.logoutButton} 
+    >
+      Logout
     </button>
   );
 }
+
 export default LogoutButton;

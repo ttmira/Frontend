@@ -1,106 +1,143 @@
-.list {
+.boardList {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
-  padding: 15px;
-}
-
-.addForm {
-  background: var(--input-bg);
-  padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.input {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid var(--accent-color);
-  border-radius: 4px;
-  background: var(--input-bg);
-  color: var(--input-text);
-}
-
-.buttons {
-  display: flex;
-  gap: 10px;
-}
-
-.button {
-  padding: 6px 12px;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  font-family: Georgia, serif;
-  background-color: var(--btn-bg);
-  color: #ffffff;
-  transition: all 0.6s;
-}
-
-/* Заменяем composes на обычные классы с общими стилями */
-.addButton {
-  padding: 10px 15px;
-  width: 100%;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  font-family: Georgia, serif;
-  background-color: var(--btn-bg);
-  color: #ffffff;
-  transition: all 0.6s;
-}
-
-.cancelButton {
-  padding: 6px 12px;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  font-family: Georgia, serif;
-  background-color: var(--danger-bg);
-  color: #ffffff;
-  transition: all 0.6s;
+  padding: 20px;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .loading {
   padding: 2rem;
   text-align: center;
   font-size: 1.2rem;
-  color: #666;
+  color: var(--text-color);
 }
 
-.error {
-  position: relative;
+.serverError {
   max-width: 500px;
   margin: 20px auto;
   padding: 20px;
-  background: #566b5c;
-  border: 1px solid #3b0202;
-  border-radius: 4px;
-  color: #ffffff;
+  background: var(--danger-bg);
+  color: white;
+  border-radius: 8px;
   text-align: center;
 }
 
-.retryButton {
-  margin-top: 15px;
-  padding: 8px 20px;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  font-family: Georgia, serif;
-  background-color: #3a0a0a;
+.serverError h3 {
+  margin-top: 0;
   color: white;
-  transition: all 0.6s;
+}
+.addForm {
+  background: var(--input-bg);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.2s ease;
 }
 
-.retryButton:hover {
-  background: #170101;
+.addForm input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background: var(--input-bg);
+  color: var(--input-text);
+  font-family: inherit;
 }
 
-@media (max-width: 600px) {
-  .list {
+.addForm input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(129, 199, 132, 0.2);
+}
+
+.formActions {
+  display: flex;
+  gap: 8px;
+}
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn.add {
+  background-color: var(--btn-bg);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 100%;
+  min-height: 35px;
+  width: 125px;
+}
+
+.btn.add:hover {
+  background-color: var(--btn-hover);
+}
+
+.btn.cancel {
+  background-color: transparent;
+  color: var(--danger-bg);
+  border: 1px solid var(--danger-bg);
+}
+
+.btn.cancel:hover {
+  background-color: var(--danger-bg);
+  color: white;
+}
+
+.btn.retry {
+  background-color: var(--btn-bg);
+  color: white;
+  margin-top: 15px;
+}
+
+.btn.retry:hover {
+  background-color: var(--btn-hover);
+}
+
+
+@media (max-width: 768px) {
+  .boardList {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .boardList {
     grid-template-columns: 1fr;
+  }
+  
+  .addForm {
+    flex-direction: column;
+  }
+  
+  .formActions {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
   }
 }
